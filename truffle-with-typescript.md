@@ -44,11 +44,12 @@ module.exports = function(deployer) {
   deployer.deploy(Migrations);
 };
 ```
-When we tried to rewrite this file using typescript `import / export` notation, the resulting
-compiled migration didn't run, with the error `Migration ... invalid or does not take any parameters`.
+To keep compatibility with Truffle we need to use the `module.exports = foo` syntax instead of using `export default foo`.
 
-In the end we just changed the extension of the migration files to `ts`, leaving the contents
-unchanged. This resulted in migration `js` files in `lib/migrations`, which ran successfully.
+This is due to typescript transpiling the `export default foo` to `exports.default = foo`. When Typescript imports a default member it get transpiled to `var foo = require('foo').default`. However since Truffle is not using typescript it imports modules with `var foo = require('foo')` which will fail. This forces us to use the `module.exports` syntax.
+
+For further details see https://github.com/Microsoft/TypeScript/issues/2719
+ 
 
 
 
