@@ -19,3 +19,7 @@ VS Code has some excellent debugging support built in, allowing you to set break
 walk through code in the editor itself.
 
 TODO: gif + describe how to setup in-editor debugging in VS Code
+
+testing a gif:
+
+![test gif](./test-gif.gif)
