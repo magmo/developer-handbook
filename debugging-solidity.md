@@ -12,37 +12,38 @@ To use the truffle debugger, you'll want a long-running local network.
 ### `truffle develop`
 
 The simplest way to achieve this is through `truffle develop`,
+
 1. This will start a local development network at `localhost:9545`, or attach to one if already running on this port.
-It will then open a node console, in which you can run javascript, with a web3 instance made available to you, connected to this network.
-Call this console `RUN`.
+    It will then open a node console, in which you can run javascript, with a web3 instance made available to you, connected to this network.
+    Call this console `RUN`.
 2. If you go this way, you should run `truffle develop --log` in another terminal window, which will attach to the network started in the previous step.
-Call this console `LOG`.
+    Call this console `LOG`.
 3. You can then run eg. `migrate --reset` (or just `migrate`) in console `RUN`.
-In console `LOG`, you'll see a list of ethereum operations.
-These are called anytime you run `truffle migrate` from the command line.
+    In console `LOG`, you'll see a list of ethereum operations.
+    These are called anytime you run `truffle migrate` from the command line.
 4. You can then run eg
-```
-SomeMigratedContract.deployed() // gives you a Web3 contract, attached to the local network
-SomeMigratedContract.deployed().then((instance) => {console.log( instance.someContractFunction(*args))}) // I don't think the truffle console deals well with linebreaks
-```
+    ```
+    SomeMigratedContract.deployed() // gives you a Web3 contract, attached to the local network
+    SomeMigratedContract.deployed().then((instance) => {console.log( instance.someContractFunction(*args))}) // I don't think the truffle console deals well with linebreaks
+    ```
 5. In console `LOG`, you'll see  something like
-```
-  develop:testrpc eth_sendTransaction +21ms
-  develop:testrpc  +63ms
-  develop:testrpc   Transaction: 0x250394cde17cb4d29098e3e8f2d7bb97de1990c549644aff746d4c229f56a248 +0ms <-- grab this
-  develop:testrpc   Contract created: 0x82d50ad3c1091866e258fd0f1a7cc9674609d254 +1ms
-  develop:testrpc   Gas usage: 3312354 +0ms
-  develop:testrpc   Block Number: 13 +1ms
-  develop:testrpc   Block Time: Tue Aug 28 2018 15:58:18 GMT-0600 (Mountain Daylight Time) +0ms
-  develop:testrpc  +0ms
-  ```
+    ```
+      develop:testrpc eth_sendTransaction +21ms
+      develop:testrpc  +63ms
+      develop:testrpc   Transaction: 0x250394cde17cb4d29098e3e8f2d7bb97de1990c549644aff746d4c229f56a248 +0ms <-- grab this
+      develop:testrpc   Contract created: 0x82d50ad3c1091866e258fd0f1a7cc9674609d254 +1ms
+      develop:testrpc   Gas usage: 3312354 +0ms
+      develop:testrpc   Block Number: 13 +1ms
+      develop:testrpc   Block Time: Tue Aug 28 2018 15:58:18 GMT-0600 (Mountain Daylight Time) +0ms
+      develop:testrpc  +0ms
+      ```
 6. Grab the transaction hash, and in console `RUN`:
-```
-truffle(develop)> debug 0x250394cde17cb4d29098e3e8f2d7bb97de1990c549644aff746d4c229f56a248
-```
-This will put you into a debug session.
-You're on your own now.
-Good luck.
+    ```
+    truffle(develop)> debug 0x250394cde17cb4d29098e3e8f2d7bb97de1990c549644aff746d4c229f56a248
+    ```
+    This will put you into a debug session.
+    You're on your own now.
+    Good luck.
 
 ### `truffle debug`
 
