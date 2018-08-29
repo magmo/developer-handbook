@@ -67,6 +67,12 @@ You can only debug _transactions_, which means you can't debug external calls to
 As a workaround, you can mark these functions as not pure.
 This will cause a compiler error in solidity 0.5.x, but we're still on 0.4.x, where it is just a compiler warning.
 
+An alternative method:
+
+>@andrewgordstewart you can't debug eth_call, but you can use truffle-contract to send calls as transactions, doing something like myContract.myViewFunction.sendTransaction(...args)
+
+>the other option, @andrewgordstewart, is to petition the Ethereum community to standardize a debug_traceCall JSON-RPC method. whatever's easier.
+
 ## References
 
 [Debugging your contracts | Truffle Suite](https://truffleframework.com/docs/getting_started/debugging)
