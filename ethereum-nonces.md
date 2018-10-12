@@ -1,6 +1,6 @@
 # Ethereum nonces
 
-One complication to consider when crafting an ethereum DApp concerns the nature of the nonces that are included in each transaction. A nonce is a word (or in this case, a number) that is used only once, and the concept plays an important role in preventing the verification of *fraudulent* transactions, by ensuring that all transactions originating from a given address are unique. 
+One complication to consider when crafting an ethereum DApp concerns the nature of the nonces that must be included in each transaction. A [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) is a word (or in this case, a number) that is used only once, and the concept plays an important role in preventing the verification of *fraudulent* transactions, by ensuring that all transactions originating from a given address are unique. 
 
 For example, if I try to re-announce a transaction that previously benefited my address, it will be marked invalid. A new transaction would need to be generated and signed with a new nonce. 
 
