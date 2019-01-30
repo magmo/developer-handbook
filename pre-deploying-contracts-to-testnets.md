@@ -16,7 +16,7 @@ To speed up the developer workflow, we have deployed the contracts in advance to
 
 The truffle artifacts created from the deployments are located here: 
 
-`/contracts/pre_deployed_artifacts/` \(TODO: Rename artifacts to pre\_deployed\_artifacts\)
+`/contracts/pre_built_artifacts/` 
 
 When the `TARGET_NETWORK` environment variable is set to a test network, webpack will use the predeployed artifacts instead of trying to deploy the contracts at compile time:
 
