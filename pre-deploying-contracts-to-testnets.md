@@ -1,5 +1,5 @@
 ---
-description: Explanation of the pre_deployed_artifacts
+description: Explanation of the pre_built_artifacts
 ---
 
 # Pre-deploying contracts to testnets
@@ -11,8 +11,6 @@ To speed up the developer workflow, we have deployed the contracts in advance to
 * Ropsten
 * Kovan
 * Rinkeby
-
-\(TODO: ttt contracts have not been deployed to these networks yet\)
 
 The truffle artifacts created from the deployments are located here: 
 
@@ -34,7 +32,7 @@ When the `TARGET_NETWORK` environment variable is set to a test network, webpack
 {% endcode-tabs-item %}
 {% endcode-tabs %}
 
-If we are targeting a development network, this snippet will use the artifacts that truffle just created at compile time. Otherwise it replaces all references to `/build/contracts/*.json` files  to the predeployed artifacts in `/contract/pre_deployed_artifacts` folder. 
+If we are targeting a development network, this snippet will use the artifacts that truffle just created at compile time. Otherwise it replaces all references to `/build/contracts/*.json` files  to the predeployed artifacts in `/contract/pre_built_artifacts` folder. 
 
 ### Deploying Contracts to a Test Network
 
@@ -44,6 +42,6 @@ There's a few steps to follow to deploy and create the pre-deployed artifacts:
 2. Set `TARGET_NETWORK` in your `.env` file to your desired test network.
 3. Run `yarn deployContracts`
 4. Repeat step 2 and 3 for any other test networks you want to pre deploy to.
-5. Copy the `.json` files from `/build/contracts` to the `/contract/pre_deployed_artifacts` folder.
+5. Copy the `.json` files from `/build/contracts` to the `/contract/pre_built_artifacts` folder.
 6. Check in the updated artifacts to source control.
 
