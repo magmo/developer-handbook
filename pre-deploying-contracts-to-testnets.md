@@ -43,5 +43,6 @@ There's a few steps to follow to deploy and create the pre-deployed artifacts:
 3. Run `yarn deployContracts`
 4. Repeat step 2 and 3 for any other test networks you want to pre deploy to.
 5. Copy the `.json` files from `/build/contracts` to the `/contract/pre_built_artifacts` folder.
-6. Check in the updated artifacts to source control.
+6. Remove unecessary fields from these `.json` files: we only need `abi`, `bytecode` and `networks.`
+7. Check in the updated artifacts to source control.
 
