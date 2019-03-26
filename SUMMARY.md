@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Introduction](README.md)
+* [Information sources](information-sources.md)
 * [Truffle with Typescript](truffle-with-typescript.md)
 * [Deploying contracts with truffle](deploying-contracts-with-truffle.md)
 * [VS Code](vs-code.md)
