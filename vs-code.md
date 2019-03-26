@@ -23,6 +23,8 @@ Here are some extensions that we've found useful:
   "trailingComma": "all",
   ```
 
+* [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) - for previewing Mermaid diagrams
+
 ## Debugging
 
 VS Code has some excellent debugging support built in, allowing you to set breakpoints and walk through code in the editor itself.
